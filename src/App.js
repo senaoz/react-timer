@@ -94,8 +94,9 @@ function App() {
 
   return (
     <Container>
+      <h2> {current === "Running" ? "Stop and see elapsed time" : " "}</h2>
       <h1 className={current !== "Not Started" ? " " : "hidden"}>
-        {current === "Running" ? "Stop" : convertMsToTime(total)}
+        {current === "Running" ? " " : convertMsToTime(total)}
       </h1>
       <h2 className={current === "Not Started" ? " " : "hidden"}>
         <span>Do you want to start a stopwatch?</span>
