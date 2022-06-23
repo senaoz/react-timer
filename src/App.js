@@ -50,6 +50,9 @@ function App() {
         ${tw`block mt-1`}
       }
     }
+    & table {
+      ${tw`table mt-20 p-1`}
+    }
   `;
 
   const handleClick = (CurrentSituation) => {
@@ -125,6 +128,38 @@ function App() {
           </button>
         )}
       </div>
+
+      {list.length > 0 ? (
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Start Time</th>
+              <th>Stop Time</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            {activityLog.map((activity, index) => {
+              const start = new Date(activity.startTime);
+              const stop = new Date(activity.stopTime);
+
+              return (
+                <tr>
+                  <td>
+                    <b>{index + 1}</b>
+                  </td>
+                  <td>{start.toLocaleString()}</td>
+                  <td>{stop.toLocaleString()}</td>
+                  <td>{list[index] / 1000} seconds</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      ) : (
+        ""
+      )}
     </Container>
   );
 }
