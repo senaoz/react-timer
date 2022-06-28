@@ -58,6 +58,7 @@ function App() {
   const handleClick = (CurrentSituation) => {
     if (CurrentSituation === "Running") {
       setStopTime(Date.now());
+
       setCurrentSituation("Stopped");
 
       return setActivity([...activityLog, { startTime, stopTime: Date.now() }]);
@@ -92,8 +93,6 @@ function App() {
     list.push(activityLog[i].stopTime - activityLog[i].startTime);
     total = list.reduce((a, b) => a + b, 0);
   }
-
-  console.log(list, convertMsToTime(total));
 
   return (
     <Container>
