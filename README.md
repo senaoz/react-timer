@@ -1,4 +1,4 @@
-## React Timer
+## Stopwatch with React
 
 Styled with TailwindCSS, bootstrapped with Create React App. The server is running on port 3000.
 In the project directory, you can run: <code>npm start</code>
